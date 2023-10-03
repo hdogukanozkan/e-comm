@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  /*  font-family: "Roboto", sans-serif;*/
+  /*  font-family: "Ubuntu", sans-serif; */
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-size: 16px;
+  @apply text-fontColor h-screen;
+}
+
+.slick-slide {
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+
+@layer base {
+  .footer-div {
+    @apply flex-1;
+  }
+  .footer-div > h2 {
+    @apply font-bold text-xl mb-2;
+  }
+
+  .footer-div > ul {
+    @apply mb-4;
+  }
+
+  .footer-div > ul > li {
+    @apply hover:text-gray-500 cursor-pointer;
+  }
+  .images {
+    @apply grid grid-cols-4 gap-2 py-4 px-1;
+  }
+
+  .images img {
+    @apply w-full aspect-square  object-cover cursor-pointer hover:opacity-80;
+  }
+
+  .image-container {
+    @apply w-full aspect-square border flex overflow-hidden;
+  }
+
+  .image-container img {
+    @apply object-cover my-auto;
+  }
+
+  .image- .product-detail-container {
+    @apply flex flex-col w-full items-center justify-start mt-5 bg-white border border-gray-400;
+  }
+
+  .product-detail-container .nav {
+    @apply flex gap-5 bg-gray-700 text-white w-full;
+  }
+
+  .product-detail-container .nav .tab {
+    @apply flex items-center justify-center text-lg font-medium cursor-pointer transition-all py-3 px-5 select-none;
+  }
+
+  .product-detail-container .nav .tab.active {
+    @apply bg-white text-black;
+  }
+
+  .product-detail-container input[type="radio"] {
+    @apply hidden;
+  }
+
+  .product-detail-container .text {
+    @apply px-4 py-4;
+  }
+
+  .accountButton {
+    @apply border relative flex-1 border-white px-5 py-2 flex justify-center gap-2 text-lg rounded-md items-center bg-mainColor text-white hover:bg-opacity-90;
+  }
+
+  .dropDownMenu {
+    @apply absolute top-full w-[250px] max-h-0 overflow-hidden transition-all h-auto;
+  }
+
+  .dropDownMenu > ul {
+    @apply flex gap-3 flex-col border-x border-b mt-1 bg-white shadow-lg px-5 py-8 border-gray-300 rounded-b-md border-t-4 border-t-mainColor;
+  }
+
+  .dropDownMenu > ul .user-link {
+    @apply text-black text-left text-base cursor-pointer font-bold hover:text-gray-700 transition-all;
+  }
+
+  /* Ürün css */
+  .product {
+    @apply border rounded-lg border-gray-400 relative overflow-hidden;
+  }
+
+  .product > img {
+    @apply scale-95 hover:scale-100 transition-all w-full aspect-square;
+  }
+
+  .product > div {
+    @apply px-3 py-4;
+  }
+
+  .stars {
+    @apply flex items-center gap-[2px] text-yellow-500 text-base md:text-lg;
+  }
+
+  .product > div .title {
+    @apply md:text-lg font-normal line-clamp-2;
+  }
+
+  .product > div .price {
+    @apply mt-5 text-right text-2xl text-mainColor font-bold;
+  }
+
+  .inputlar {
+    @apply border-2 border-gray-300 py-2 px-2 rounded-md outline-none hover:bg-gray-100 focus:bg-transparent focus:border-mainColor;
+  }
+
+  .active > .HoverSlide {
+    @apply border-mainColor bg-mainColor bg-opacity-25;
+
+    & .icon {
+      @apply !text-mainColor;
+    }
+  }
+  /* AccountDetails linkler hover olduğunda */
+  .HoverSlide {
+    @apply flex items-center gap-2 transition-all border-l-4 border-transparent pl-2 cursor-pointer py-2 rounded-r-md hover:bg-mainColor hover:bg-opacity-25;
+
+    .icon {
+      @apply text-gray-500;
+    }
+    &:hover .icon {
+      @apply !text-mainColor;
+    }
+  }
+  /* --------------------------------------------- */
+  .main-container {
+    @apply max-w-[1300px] mx-auto pt-3 pb-20 md:py-3 px-2 md:px-3 z-50 flex-1 w-full;
+  }
+
+  .switch-container {
+    @apply flex gap-2;
+
+    .switch-button {
+      @apply relative w-12 h-6 bg-black block rounded-r-full rounded-l-full;
+
+      .switch-circle {
+        @apply translate-x-0 absolute h-full aspect-square rounded-full bg-mainColor transition-all pointer-events-none scale-105;
+      }
+
+      .switch-circle.active {
+        @apply translate-x-full;
+      }
+    }
+  }
+
+  /* CONTAİNER */
+  .auth {
+    @apply mx-auto max-w-[400px] w-full flex flex-col gap-y-4 px-2 md:px-0 mt-4;
+  }
+
+  .img-container {
+    @apply flex justify-center items-center my-3;
+
+    & > img {
+      @apply w-24 md:w-40;
+    }
+  }
+
+  /* Form başlığı */
+  .register {
+    @apply flex flex-col gap-y-3;
+
+    &.active {
+      @apply hidden;
+    }
+
+    .inputContainer {
+      @apply relative font-light;
+
+      & > label,
+      .genderHeader {
+        @apply font-light;
+      }
+
+      & > div {
+        @apply flex flex-col;
+
+        & > input {
+          @apply px-3 py-2 bg-transparent border-b border-inputBorderColor text-black outline-none;
+        }
+      }
+    }
+
+    /* Submit buttonu - Kayıt olma */
+    .submitBtn {
+      @apply w-full bg-mainColor text-secondColor py-3 cursor-pointer hover:bg-opacity-80 transition-all rounded-md;
+    }
+  }
+
+  /* beyaz input container */
+  .login {
+    @apply w-full flex flex-col bg-secondColor gap-3;
+
+    &.active {
+      @apply hidden;
+    }
+
+    /* İNPUT */
+    .inputContainer {
+      @apply relative font-light;
+
+      & > label,
+      .genderHeader {
+        @apply font-light;
+      }
+
+      & > div {
+        @apply flex flex-col;
+
+        & > input {
+          @apply px-3 py-2 bg-transparent border-b border-inputBorderColor text-black outline-none;
+        }
+      }
+    }
+
+    /* SUBMİT BUTTONU */
+    & > input[type="submit"] {
+      @apply border-2 bg-mainColor !text-secondColor border-inputBorderColor py-2 text-lg  rounded-lg transition-all  hover:bg-opacity-90 cursor-pointer;
+    }
+  }
+
+  .order-history {
+    @apply text-base;
+  }
+
+  .order-history > h3 {
+    @apply font-bold text-2xl;
+  }
+
+  .order-history .order {
+    @apply border border-gray-400 m-4 flex flex-col gap-4;
+  }
+
+  .order-history .order .header {
+    @apply bg-gray-300 p-2 flex justify-around;
+  }
+
+  .order-history .order .order-details {
+    @apply flex justify-around items-center;
+  }
+
+  .order-history .order .footbar {
+    @apply bg-gray-300 p-2 flex justify-around;
+  }
+
+}

@@ -1,0 +1,19 @@
+{
+	"products": [
+		{
+			"id": 1,
+			"title": "Xiaomi tvbox android tv cart curt",
+			"price": 50,
+			"description": "32gb ramli güzel bir telefon.",
+			"seller": "Bizim sitemiz.com",
+			"images": [
+				"https:1",
+				"https:2",
+				"https:3",
+				"https:4"
+			],
+			"trademark": "Xiaomi",
+			"comments": ""
+		}
+	]
+}
